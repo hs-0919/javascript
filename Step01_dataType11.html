@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_dataTyp11.html</title>
+</head>
+<body>
+    <h1>javascript 데이터 type</h1>
+    <button onclick="remove()"> 삭제    </button><br>
+    <button onclick="input()"> 입력받기 </button><br>
+    <button onclick="print()">입력받은 내용 출력</button><br>
+    
+    <button onclick="input1()">입력받기1</button>
+    <button onclick="print1()">입력받은 내용 출력1</button>
+    <script>
+        // 특정시점에 호출하기위해.. 
+        //삭제여부를 입력받아서 지역변수 isDelete 에 담는다.
+        function remove(){ 
+            let isDelete = confirm("삭제할까요?");
+            //만일 삭제할거면(isDelete에 true가 들어 있다면)
+            if(isDelete){
+                //조건부 
+                //삭제하는 작업하기.
+                console.log("삭제 합니다.");
+            }
+        };
+        //global 영역 - local영역이 global 영역을 참조불가
+        let msg;
+        //local 영역에서 접근가능하게 하는법은 local 영역에 변수를 선언하기 전에 만들기. 페이지 로딩 시점에 global 영역에 변수를 만들어놓음
+        
+            
+        //prompt -사용자가 입력한 값을 받아오기 위한 목적
+        function input(){
+            //local 영역
+            //global 영역에 만들어진 변수에 입력한 문자열을 저장.
+            msg = prompt("메세지를 입력하세요...");
+        };
+
+        function print(){
+            //global 영역에 만들어진 변수에 있는 값을 참조하여 작업을 한다.
+            console.log(msg);
+        };
+
+
+        let mmg;
+        function input1 (){
+            mmg = prompt("입력하세요");// 입력받은 것을 저장
+        };
+        function print1 (){
+            console.log(mmg);//입력받아온것, 저장되어진 mmg를 출력
+        };
+        
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

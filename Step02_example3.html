@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example3.html</title>
+
+</head>
+<body>
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <div>div4</div>
+    <div>div5</div>
+    <div>div6</div>
+    <div>div7</div>
+    <div>div8</div>
+    <div>div9</div>
+    <div>div10</div>
+    <div>div11</div>
+    <div>div12</div>
+    <div>div13</div>
+    <div>div14</div>
+    <div>div15</div>
+    <div>div16</div>
+    <div>div17</div>
+    <div>div18</div>
+    <div>div19</div>
+    <div>div20</div>
+    <button id="changeBtn">바꾸기</button>
+    <script>
+        /*
+            바꾸기 버튼을 눌렀을때 모든 div의 innerText가 "김구라"로변경되는 프로그래밍 해보기.
+            document.querySelectorAll("div")[0].innerText="김구라";
+            document.querySelectorAll("div")[1].innerText="김구라";
+        */
+
+        /*document.querySelector("#changeBtn").addEventListener("click",function(){
+            document.querySelectorAll("div")[0].innerText="김구라";
+            document.querySelectorAll("div")[1].innerText="김구라";
+            document.querySelectorAll("div")[2].innerText="김구라";
+            document.querySelectorAll("div")[3].innerText="김구라";
+            document.querySelectorAll("div")[4].innerText="김구라";
+            document.querySelectorAll("div")[5].innerText="김구라";
+            document.querySelectorAll("div")[6].innerText="김구라";
+            document.querySelectorAll("div")[7].innerText="김구라";
+            document.querySelectorAll("div")[8].innerText="김구라";
+            document.querySelectorAll("div")[9].innerText="김구라";
+            document.querySelectorAll("div")[10].innerText="김구라";
+            document.querySelectorAll("div")[11].innerText="김구라";
+            document.querySelectorAll("div")[12].innerText="김구라";
+            document.querySelectorAll("div")[13].innerText="김구라";
+            document.querySelectorAll("div")[14].innerText="김구라";document.querySelectorAll("div")[15].innerText="김구라";document.querySelectorAll("div")[16].innerText="김구라";document.querySelectorAll("div")[17].innerText="김구라";document.querySelectorAll("div")[18].innerText="김구라";
+            document.querySelectorAll("div")[19].innerText="김구라";
+
+        });*/
+        
+
+        document.querySelector("#changeBtn").addEventListener("click",function(){
+            for(let i=0; i<20; i++){
+
+                document.querySelectorAll("div")[i].innerText="김구라";
+            
+            }
+            
+        });
+
+        /*
+            반복 수행 문법
+            for(let i=0; i<20; i++){} 여기서  'i<20' 이부분이 몇번 반복할건지 반복횟수를 결정한다. 0부터 10까지면 -> i=0; i<10; 이런식으로 작성
+        */
+        for(let i=0; i<5; i++){
+            console.log("출력");
+            console.log(i);
+        }
+
+    </script>
+</body>
+</html>

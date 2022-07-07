@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_event3.html</title>
+    <style> 
+        /* 내부 css*/
+        .box{
+            width: 300px;
+            height: 300px;
+            border: 2px solid black;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id = "myDiv"></div>
+
+    <script>
+        //1. 위의 div에 "mousedown" 이벤트가 일어나면 div의 배경색을 노란색으로 바꿔 보기. 힌트 .style.backgroundColor="색상";
+        //2. 위의 div에 "mouseup" 이벤트가 일어나면 div의 배경색을 흰색으로 바꿔 보기.
+        //3. 위의 div에 "mousemove" 이벤트가 일어 날때 마다 해당 마우스의 좌표를 div의 innerText로 출력하도록 해보세요.
+        //출력형식: x좌표:100 , y좌표:200
+        //키워드 addEventListener mousemove x y 
+
+        //1번
+        document.querySelector("#myDiv").addEventListener("mousedown",function(){
+            document.querySelector("#myDiv").style.backgroundColor="yellow";
+        });
+        //2번
+        document.querySelector("#myDiv").addEventListener("mouseup",function(){
+            document.querySelector("#myDiv").style.backgroundColor="white";
+        });
+        //3번
+        document.querySelector("#myDiv").addEventListener("mousemove",function(e){
+            console.log("mousemove!")
+            console.log(e)
+            //출력할 정보 구성하기
+            let info="x좌표: "+e.offsetX+ ", y좌표:"+e.offsetY;
+            document.querySelector("#myDiv").innerText=info;
+            //mousemove(e);
+        });
+
+
+        /*function mousemove(e){
+            let a = e.offsetX; //offsetX,Y div안에서의 좌표
+            let b = e.offsetY;
+            let c = "X좌표:("+a+") Y좌표:("+b+")";
+            document.querySelector("#myDiv").innerText=c;
+        };*/
+
+        //2개의 매개변수가 선언된 함수(미리 만들어놓은 함수)
+        function callMe(eventName, callback){
+            console.log("이벤트명:"+eventName);
+            //callback 함수를 호출하면서 전달할 object
+            let obj={num:1, name:"김구라"};
+            //callback에 전달된 data type은 함수이므로 호출할 수 있다.
+            callback(obj);
+        };
+        //(위의 미리 만들어놓은 함수를 이용하여 만든함수)
+        callMe ("배고파",function(a){
+            alert(a.name);
+        });
+        
+        
+    </script>
+</body>
+</html>

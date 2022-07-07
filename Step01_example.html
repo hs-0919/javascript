@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_example.html</title>
+</head>
+<body>
+    <p>p 입니다</p>
+    <!--document.querySelectorAll("p")[0]; 콘솔창에서 이부분의 참조값을 얻어오는 방법.-->
+    <p>p 입니다</p>
+    <p id ='one' class="My-class">p 입니다</p><!--document.querySelector("#one")-->
+    <p id ="two" class="My-class">p 입니다</p><!--document.querySelector("#two")-->
+    <p class="My-class">p 입니다</p>
+    
+    <!--
+        (html, head, meta~, title, body, p 등 이러한 것들을 문서object(객체)라고 한다.)
+        - 문서object는 heap영역에 저장되어지는데 저장 되어지면서 각각의 고유 키번호(사물함 번호)가 주어진다. 
+        - 이렇게 저장되어진 고유 키번호를 찾아보자. 
+    -->
+    <!--
+        1. 먼저 console 창에 document.querySelectorAll입력하면
+        document.querySelectorAll
+        ƒ querySelectorAll() { [native code] } 이라고 나오며 funtion타입인지 알 수 있다.
+    -->
+    <p class = "home">p1</p>
+    <!--
+        2. document.querySelectorAll("p")라고 입력하면 관련 p요소들이 쭉 나온다. console창에서 내가 찾고 싶은 p를 확인할 수 있다.
+    -->
+    <p class = "home">p2</p>
+    <!--
+        3. 여러 p중에서 내가 알고싶은 p의 참조값을 얻오려면 
+        document.querySelectorAll("p")[6]; 입력하면 p2의 참조값을 확인할 수 있다. 
+    -->
+    <p class = "home">p3</p>
+    <!--
+        4. 또한, 만약에 p들 중에서 p3의 내용을 수정하거나 바꿔보고싶다면 document.querySelectorAll("p")[7].innerText="수정"; 입력한다면 p3의 내용이 수정되어진 것을 확인할 수 있다.(단, 편집기에서도 수정이 되는것이 아니라 인터넷 창에서만 수정된 모습을 보는것이다. )
+    -->
+
+    <button onclick="ch()" > 바꾸기 </button>
+    <button onclick="cg()"> 바꿔</button>
+   
+    <script>
+
+        document.querySelectorAll("p")[0].innerText=" 김구라";
+        /*
+            바꾸기 버튼을 누르면 id가 one인 요소의 innerText를 "해골"로 바뀌도록 프로그래밍 해보기
+        */
+        function ch (){
+            document.querySelector("#one").innerText=" 해골";
+        };
+        let cg = function (){
+            document.querySelector("#one").innerText=" p 입니다";
+        };
+
+        
+    </script>
+    
+</body>
+</html>
