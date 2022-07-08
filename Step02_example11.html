@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example11.html</title>
+</head>
+<body>
+    <h3>가위 바위 보 게임</h3>
+    <select id="mySelect">
+        <option value="">나: 선택</option>
+        <option value="0">나: 가위</option>
+        <option value="1">나: 바위</option>
+        <option value="2">나: 보</option>
+    </select>
+    <strong>vs</strong>
+    <select id="comSelect">
+        
+        <option value="0">com : 가위</option>
+        <option value="1">com : 바위</option>
+        <option value="2">com : 보</option>
+    </select>
+    <p id="result"></p>
+    <script>
+        /*
+            Step02_example9.html을 참고해서 가위, 바위 ,보 게임을 완성해 보시오
+            승리시 p요소에 '이겼다'
+            패배시 p요소에 '졌다'
+            비길시 p요소에 '비겼다'라고 출력이 되면 됩니다.
+            document.querySelector("#comSelect").value=0;
+            document.querySelector("#comSelect").value=1;
+            document.querySelector("#comSelect").value=2;
+
+        */
+        
+
+        document.querySelector("#mySelect").addEventListener("change",function(){
+            //선택한 value 값 읽어오기  "0" or "1" or "2"
+            let value=document.querySelector("#mySelect").value;
+            // 0 or 1 or 2 중에 랜덤한 숫자 얻어내기
+            let num=Math.floor(Math.random()*3);
+            // 랜덤한 숫자를 com 의 select 의 value 로 넣어주기
+            document.querySelector("#comSelect").value=num;
+            
+        
+            if(value == 0){//만일 내가 가위를 냈을때
+                if(num == 0){//com이 가위
+                    document.querySelector("#result").innerText="비겼습니다";
+                }else if(num == 1){//com이 바위
+                    document.querySelector("#result").innerText="졌습니다";
+                }else if(num == 2){//com이 보
+                    document.querySelector("#result").innerText="이겼습니다";
+                }
+            }else if(value == 1){//아니면 내가 바위를 냈을때
+                if(num == 0){//com이 가위
+                    document.querySelector("#result").innerText="이겼습니다";
+                }else if(num == 1){//com이 바위
+                    document.querySelector("#result").innerText="비겼습니다";
+                }else if(num == 2){//com이 보
+                    document.querySelector("#result").innerText="졌습니다";
+                }
+            }else if(value == 2){//아니면 내가 보를 냈을때
+                if(num == 0){//com이 가위
+                    document.querySelector("#result").innerText="졌습니다";
+                }else if(num == 1){//com이 바위
+                    document.querySelector("#result").innerText="이겼습니다";
+                }else if(num == 2){//com이 보
+                    document.querySelector("#result").innerText="비겼습니다";
+                }
+            }
+        });
+        
+    </script>
+</body>
+</html>
