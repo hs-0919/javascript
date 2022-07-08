@@ -29,6 +29,8 @@
     <div>div19</div>
     <div>div20</div>
     <button id="changeBtn">바꾸기</button>
+    <button id="changeBtn2">바꾸기2</button>
+    <button id="changeBtn3">바꾸기3</button>
 
 
 
@@ -48,8 +50,37 @@
 
         });
 
+        document.querySelector("#changeBtn2").addEventListener("click",function(){   //만일 index 가 10이면
+            if(index == 10){
+                //함수를 여기서 끝내라
+                return;
+            }    
+            
+            let divs=document.querySelectorAll("div");
+            //배열의 특정 index에 들어 있는 div요소의 innertext 를 변화.
+            divs[index].innerText="김구라";
+            //index값을 1증가 시킨다.
+            index= index+1;
+            
 
-        
+        });
+
+        document.querySelector("#changeBtn3").addEventListener("click",function(){   //이방법을 더 많이 사용
+            let divs=document.querySelectorAll("div");
+            if(index == divs.length){
+                //함수를 여기서 끝내라
+                return;
+            }    
+            
+            //배열의 특정 index에 들어 있는 div요소의 innertext 를 변화.
+            divs[index].innerText="김구라";
+            //index값을 1증가 시킨다.
+            index= index+1;
+            
+
+        });
+
+
     </script>
 </body>
 </html>
