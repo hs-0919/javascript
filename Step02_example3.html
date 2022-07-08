@@ -29,6 +29,7 @@
     <div>div19</div>
     <div>div20</div>
     <button id="changeBtn">바꾸기</button>
+    <button id="changeBtn2">바꾸기2</button>
     <script>
         /*
             바꾸기 버튼을 눌렀을때 모든 div의 innerText가 "김구라"로변경되는 프로그래밍 해보기.
@@ -51,7 +52,11 @@
             document.querySelectorAll("div")[11].innerText="김구라";
             document.querySelectorAll("div")[12].innerText="김구라";
             document.querySelectorAll("div")[13].innerText="김구라";
-            document.querySelectorAll("div")[14].innerText="김구라";document.querySelectorAll("div")[15].innerText="김구라";document.querySelectorAll("div")[16].innerText="김구라";document.querySelectorAll("div")[17].innerText="김구라";document.querySelectorAll("div")[18].innerText="김구라";
+            document.querySelectorAll("div")[14].innerText="김구라";
+            document.querySelectorAll("div")[15].innerText="김구라";
+            document.querySelectorAll("div")[16].innerText="김구라";
+            document.querySelectorAll("div")[17].innerText="김구라";
+            document.querySelectorAll("div")[18].innerText="김구라";
             document.querySelectorAll("div")[19].innerText="김구라";
 
         });*/
@@ -60,14 +65,19 @@
         document.querySelector("#changeBtn").addEventListener("click",function(){
             for(let i=0; i<20; i++){
 
-                document.querySelectorAll("div")[i].innerText="김구라";
+                document.querySelectorAll("div")[i].innerText="튀김 순대 김밥 떡볶이";
             
             }
             
         });
-
+        document.querySelector("#changeBtn2").addEventListener("click",function(){   //div인 모든 문서객체의 참조값을 배열로 얻어낸다.
+            let divs= document.querySelectorAll("div");   
+            for(let i=0; i<divs.length; i++){
+                divs[i].innerText="튀김 김밥 떡볶이";
+            }    
+        });    
         /*
-            반복 수행 문법
+            반복 수행 문법 - i는 방번호라 생각하기
             for(let i=0; i<20; i++){} 여기서  'i<20' 이부분이 몇번 반복할건지 반복횟수를 결정한다. 0부터 10까지면 -> i=0; i<10; 이런식으로 작성
         */
         for(let i=0; i<5; i++){

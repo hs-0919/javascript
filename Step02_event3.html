@@ -34,13 +34,13 @@
             document.querySelector("#myDiv").style.backgroundColor="white";
         });
         //3번
-        document.querySelector("#myDiv").addEventListener("mousemove",function(e){
+        document.querySelector("#myDiv").addEventListener("mousemove",function(e){//(e)는 매개변수, 이름은 아무거나 사용가능
             console.log("mousemove!")
             console.log(e)
             //출력할 정보 구성하기
             let info="x좌표: "+e.offsetX+ ", y좌표:"+e.offsetY;
             document.querySelector("#myDiv").innerText=info;
-            //mousemove(e);
+            //mousemove(e); 
         });
 
 
