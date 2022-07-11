@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop_test2.html</title>
+
+</head>
+<body>
+    <script>
+        //배열 - 전형적인 패턴!! 알아두기!
+        let nums=[10, 20, 30, 40, 50, 60];
+        for(let i=0; i<nums.length; i++){ //i<nums.length; = 배열의 크기
+            //i번째 방에 들어있는 item 참조하기
+            let tmp=nums[i];
+            //참조된 값 사용하기
+            console.log(tmp);
+            //tmp는 사라졌다가 만들어졌다 반복한다.
+        }
+        //object가 item으로 들어있는 배열, 배열안에 오브젝트
+        let members=[
+            {num:1, name:"김구라"},
+            {num:2, name:"해골"},
+            {num:3, name:"원숭이"},
+            
+        ];
+        for (let i=0; i<members.length; i++){
+            //tmp는 오브젝트타입
+            let tmp=members[i];
+            console.log(tmp.num+"ㅣ"+tmp.name);
+        }
+
+    </script>
+</body>
+</html>

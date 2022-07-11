@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step03_if.html</title>
+</head>
+<body>
+    <h1>if 문 테스트</h1>
+    <p id="result"></p>
+    <script>
+        let isLike=confirm("술을 좋아 합니까?");// 확인을 누르면 true가 실행되어 "술한잔 합시다!"가 출력, 취소를 누르면 다건너뜀.
+
+        //만일 isLike 가 true 이면
+        if(isLike == true){
+            document.querySelector("#result").innerText="술한잔 합시다!";
+        }
+        
+        //만일 좋아 한다면- 대화식을 작성하기 isLike처럼(읽기 편함)- 위쪽의 if문과 로직은 같다.
+        if(isLike){
+            document.querySelector("#result").innerText="술한잔 합시다!";
+        }
+
+    </script>
+</body>
+</html>
