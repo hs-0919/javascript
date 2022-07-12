@@ -9,6 +9,13 @@
     <script src="js/bootstrap.bundle.js"></script>
 </head>
 <body>
+    <!--
+        gird - 폭은 12등분, ex) col-1~12 (width를 결정), col-1 8%, col-2 16%,col-3 25% ...
+        col 은 일반적으로 row안에 배치하는게 일반적이다. 또는 row안에 col을 만들고 그 안에 row를 만들고 col을 만들 수 있다. 
+        grid breakpoints - Small - sm (576px 이상), Meadium - md(768px 이상), Large - lg(992px 이상), Extra large - xl(1200px 이상), Extra extra large - xxl(1400px 이상)
+        ex) <div class="col-sm-6"> => 폭이 576px이상이면 50%만 차지한다, 50%가 아니면 100%을 차지한다. div요소는 블럭 요소이기 때문에(조건부)
+        https://heropy.blog/2018/11/24/css-flexible-box/
+    -->
     <div class="container">
         <h1 class="bg-secondary">Grid Test</h1>
         <div class="row">
